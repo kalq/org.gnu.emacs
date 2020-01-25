@@ -20,6 +20,7 @@
         {
             "name": "emacs",
             "buildsystem": "autotools",
+            "config-opts": [ "--with-xft", "--with-wide-int", "--with-modules" ],
             "sources": [
                 {
                     "type": "archive",

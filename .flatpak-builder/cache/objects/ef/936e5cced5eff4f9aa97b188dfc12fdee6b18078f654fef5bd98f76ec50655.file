@@ -1,0 +1,59 @@
+{
+  "id" : "org.gnu.emacs",
+  "runtime" : "org.freedesktop.Sdk",
+  "runtime-version" : "19.08",
+  "runtime-commit" : "8c7ab42382dbf0ca5fd6c41864158bc001fb0570f8b41e164ea6c6a2dfee22c7",
+  "sdk" : "org.freedesktop.Sdk",
+  "sdk-commit" : "8c7ab42382dbf0ca5fd6c41864158bc001fb0570f8b41e164ea6c6a2dfee22c7",
+  "command" : "emacs",
+  "modules" : [
+    {
+      "name" : "emacs",
+      "buildsystem" : "autotools",
+      "config-opts" : [
+        "--with-xft",
+        "--with-wide-int",
+        "--with-modules"
+      ],
+      "sources" : [
+        {
+          "url" : "https://ftp.gnu.org/gnu/emacs/emacs-26.3.tar.xz",
+          "sha256" : "4d90e6751ad8967822c6e092db07466b9d383ef1653feb2f95c93e7de66d3485",
+          "type" : "archive"
+        },
+        {
+          "path" : "appdata-releases.patch",
+          "type" : "patch"
+        },
+        {
+          "path" : "appdata-launchable.patch",
+          "type" : "patch"
+        },
+        {
+          "path" : "appdata-content-rating.patch",
+          "type" : "patch"
+        },
+        {
+          "path" : "appdata-screenshot-size.patch",
+          "type" : "patch"
+        }
+      ],
+      "cleanup" : [
+        "/share/icons/hicolor/scalable/mimetypes/emacs-document.svg",
+        "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--share=network",
+    "--share=ipc",
+    "--socket=pulseaudio",
+    "--socket=x11",
+    "--filesystem=host",
+    "--filesystem=/tmp",
+    "--filesystem=/var/tmp"
+  ],
+  "rename-desktop-file" : "emacs.desktop",
+  "rename-appdata-file" : "emacs.appdata.xml",
+  "rename-icon" : "emacs"
+}

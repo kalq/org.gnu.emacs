@@ -1,0 +1,5 @@
+[Runtime]
+name=org.gnu.emacs.Debug
+
+[ExtensionOf]
+ref=app/org.gnu.emacs/x86_64/master
