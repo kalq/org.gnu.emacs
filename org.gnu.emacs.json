@@ -48,6 +48,16 @@
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document.svg",
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
             ]
-        }
+        },
+	{
+	    "name": "emacs-libvterm",
+	    "buildsystem": "cmake",
+	    "sources": [
+		{
+		    "type": "git",
+		    "url": "https://github.com/akermu/emacs-libvterm"
+		}
+	    ]
+	}
     ]
 }
